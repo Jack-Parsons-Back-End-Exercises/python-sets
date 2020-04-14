@@ -45,11 +45,11 @@ available_car_colors = (
 report_dictionary = {}
 
 for make in makes:
-    make_model = dict()
+    make_model = {}
     report_dictionary[make[1]] = make_model
 
     for model in models:
-        color_options = list()
+        color_options = []
         if model[2] == make[0]:
 
             make_model[model[1]] = color_options
@@ -59,4 +59,12 @@ for make in makes:
                         if color[0] == color_option[1]:
                             color_options.append(color[1])
 
-print(report_dictionary)
+for keys, values in report_dictionary.items():
+    print(f'{keys}')
+    print("----------")
+    
+    for keys, values in values.items():
+        print(f'{keys} available in {values[0]}, {values[1]}, and {values[2]}')
+
+    print("")
+    print("")
